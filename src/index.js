@@ -24,7 +24,7 @@ modalForm.addEventListener('submit', e => {
     phone: userPhone,
     email: userEmail,
   };
-
+localStorage.setItem('contacts', JSON.stringify(contacts))
   console.log(contacts);
 
   modalForm.reset();
