@@ -13,18 +13,19 @@ modalForm.addEventListener('submit', e => {
   const userPhone = phone.value.trim();
   const userEmail = email.value.trim();
 
+ 
   if (!userName || !userPhone || !userEmail) {
     alert('Please fill in all fields');
     return;
   }
 
-  const contact = {
+  const contacts = {
     name: userName,
     phone: userPhone,
     email: userEmail,
   };
 
-  console.log(contact);
+  console.log(contacts);
 
   modalForm.reset();
 });
