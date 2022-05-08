@@ -5,8 +5,12 @@ import { getRefs } from './js/getRefs';
 const { formSearch, modalForm, contactsList } = getRefs();
 
 // Event listeners
+
+
 modalForm.addEventListener('submit', e => {
   e.preventDefault();
+
+  
   const { name, phone, email } = e.target;
 
   const userName = name.value.trim();
@@ -18,15 +22,19 @@ modalForm.addEventListener('submit', e => {
     alert('Please fill in all fields');
     return;
   }
-
-  const contacts = {}
-  contacts.name = userName;
-  contacts.phone = userPhone;
-  contacts.email = userEmail;
+  let contactsArrow = JSON.parse(localStorage.getItem('contacts')) || [];
+  const contacts = {
+    name: userName,
+    phone: userPhone,
+    email: userEmail,
+  }
   
-  const contaktsItem = localStorage.setItem('contacts', JSON.stringify(contacts));
-  // contaktsItem.push(localStorage.setItem('contacts', JSON.stringify(contacts)));
-  console.log(contacts);
 
+  contactsArrow.push(contacts);
+
+  const contaktsItem = localStorage.setItem('contacts', JSON.stringify(contactsArrow));
+console.log(JSON.parse(localStorage.getItem('contakts')))
   modalForm.reset();
+  
 });
+
