@@ -3,7 +3,7 @@
   "version": "1.1.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://github.com/AleksandroKravchuk/praktik08-09/",
+  "homepage": "https://goitacademy.AleksandroKravchuk/praktik08-09",
   "scripts": {
     "dev": "parcel src/*.html --open",
     "build": "parcel build src/*.html --public-url /praktik08-09/"
